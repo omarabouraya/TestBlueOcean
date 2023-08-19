@@ -26,7 +26,14 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        echo 'running deploy'
+        input(message: 'are you sure u want deploy', ok: 'yes im sure')
+        echo 'mission completed'
+      }
+    }
+
+    stage('notify for new built') {
+      steps {
+        echo 'new built completed successfully'
       }
     }
 
